@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7ea463c34f.js" crossorigin="anonymous"></script>
+    <title>Animation Page</title>
+    <style>
+
+    *{
+        margin: 0;
+        padding:0;
+        font-family: 'poppins', sans-serif;
+    }
+    .container{
+        background-image: url(https://images.unsplash.com/photo-1614106765035-bceac4ac1911?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGFwcGxlJTIwd2F0Y2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+        background-position: center;    
+    }
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 ;
+        padding-top: 10px;
+        transition: background 1s;
+        
+    }
+    .image img{
+        width: 100px;
+        height: 80px;
+        padding-left: 100px;
+    }
+    .menu-header ul{
+        display: flex;
+        list-style-type: none;
+        padding-right: 100px;
+    }
+    li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 0 20px;
+        font-size: 20px;
+    }
+    .wrapper-box{
+        margin: 100px 10%;
+    }
+    .wrapper-box h1{
+        font-size: 80px;
+        font-weight: 800;
+        color: #fff;
+    }
+    .wrapper-box p{
+        font-size: 15px;
+        color: #fff;
+        padding-top: 10px;
+
+    }
+    .box1{
+        display: flex;
+        align-items: center;
+        margin-top:20px;
+        font-size: 15px;
+    }
+    .box1 a{
+        text-decoration: none;
+        color:#fff;
+    }
+    a.link1{ 
+        color: #fff;
+        border: 2px solid white;
+        border-radius: 30px;
+        padding: 10px;
+        margin-right: 10px;
+        
+    }
+    nav:hover{
+        background-color: #fff;
+        right: 0;
+        left: 0;
+    }
+    nav:hover a.content{
+        color: black;
+    }
+    nav:hover .content{
+        color:black;
+    }
+    .slide-left{
+        animation: slideleft 1s linear forwards;
+    }
+    @keyframes  slideleft{
+        from{
+            transform: translate(100px);
+            opacity: 0;
+        }
+        to{
+            transform: translate(0px);
+            opacity: 1;
+        }
+    }
+    p.slide-left{
+        animation-delay: 1s;
+        opacity: 0;
+    }
+    .box1.slide-left{
+        animation-delay: 2s;
+        opacity: 0;
+    }
+    .header{
+        position: relative;
+    }
+    .childitem{
+        display: flex;
+        position: absolute;
+        top:100%;
+        width: 400px;
+        background-color: #fff;
+        align-items: center;
+        visibility: hidden;
+        transition: 0.3s;
+
+    }
+    .item{
+        width: 25%;
+    }
+    .item h4{
+        padding-top:12px;
+        padding-left:9px;
+        font-size: 18px;
+        background-color: #e17055;
+    }
+    ul.list-item{ 
+        flex-direction: column;
+        display: block;
+        padding: 10px;
+        font-weight: 500;
+
+    }
+    ul.list-item li{
+        padding:5px;
+    }
+    li.content1:hover .childitem{
+        visibility: visible;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+     
+      <nav class="header">
+         <div class="image"><img src="https://d3ulwu8fab47va.cloudfront.net/skin/frontend/default/ubuycom-v1/images/ubuy-logo.png.webp?v=1.0" alt=""></div>
+         <div class="menu-header">
+           <ul>
+               <li class="content1"><a class="content"href="#"><i class="fa-solid fa-house"></i>Home</a>
+                <div class="childitem">
+                    <div class="item">
+                      <h4 class="headtable">Element1</h4>
+                      <ul class="list-item">
+                        <li>Item1</li>
+                        <li>Item2</li>
+                        <li>Item3</li>
+                        <li>Item4</li>
+                        <li>Item5</li>
+                      </ul>
+                    </div>
+                    <div class="item">
+                      <h4 class="headtable">Element2</h4>
+                      <ul class="list-item">
+                        <li>Item1</li>
+                        <li>Item2</li>
+                        <li>Item3</li>
+                        <li>Item4</li>
+                        <li>Item5</li>
+                      </ul>
+                    </div>
+                    <div class="item">
+                      <h4 class="headtable" >Element3</h4>
+                      <ul class="list-item">
+                        <li>Item1</li>
+                        <li>Item2</li>
+                        <li>Item3</li>
+                        <li>Item4</li>
+                        <li>Item5</li>
+                      </ul>
+                    </div>
+                    <div class="item">
+                      <h4 class="headtable">Element4</h4>
+                      <ul class="list-item">
+                        <li>Item1</li>
+                        <li>Item2</li>
+                        <li>Item3</li>
+                        <li>Item4</li>
+                        <li>Item5</li>
+                      </ul>
+                    </div>
+                   </div>
+               </li>
+               <li><a class="content" href="#">Feature</a></li>
+               <li><a class="content" href="#">Fitness</a></li>
+               <li><a class="content" href="#">Connectivity</a></li>
+               <li><a class="content" href="#">Support</a></li>
+           </ul>
+
+         </div>
+      </nav>
+      <section class="wrapper">
+       <div class="wrapper-box">
+         <h1 class="slide-left">The<br/>Future.</h1>
+         <p class="slide-left">This is the first smartwatch from our company.We're make a huge collection of watches in all gategories.</p>
+         <div class="box1 slide-left">
+         <a class="link1" href="#">Learn more</a>
+         <a class="link" href="#">or Contact</a>
+
+         </div>
+       </div>
+      </section>
+    </div>
+</body>
+</html>

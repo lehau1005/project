@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Web Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/7ea463c34f.js" crossorigin="anonymous"></script>
+    <style>
+    body{
+        margin: 0;
+        padding:0;
+        font-family: 'Roboto', sans-serif;
+    }
+    .header{
+        width: 100%;
+        min-height: 100vh;
+        background-image:url(https://images.unsplash.com/photo-1583373834259-46cc92173cb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dW5pdmVyc2l0eSUyMGNhbXB1c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60) ;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2% 6%;
+    }
+    img.image1{
+        height: 110px;
+        opacity: 0.8;
+        margin:10px
+    }
+    .menu-header ul  {
+        display: flex;
+        list-style-type: none;  
+    }
+    li a {
+        text-decoration: none;
+        padding:6px 20px;
+        text-transform: uppercase;
+        color: white;
+        font-size: 15px;
+        position: relative;   
+    }
+    li a::after{
+        content: "";
+        height: 3px;
+        width: 60%;
+        position: absolute;
+        background-color:tomato;
+        bottom: 0;
+        left: 20%;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out;
+    }
+    li a:hover::after{
+        transform: scaleX(1);
+
+    }
+    .text-box{
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        color:#f5f6fa;
+    }
+    .text-box h1{
+        font-size: 50px;
+
+    }
+    .text-box p{
+        font-size: 16px;
+
+    }
+    .text-link{
+        text-decoration: none;
+        border:1px solid #fff;
+        font-size: 13px;
+        padding:12px 34px;
+        background-color: transparent;
+        color:#fff;
+    }
+    .text-link:hover{
+        border:1px solid #f44336;
+        background-color: #f44336;
+        transition: 1s;
+    }
+    
+    @media(max-width: 700px){
+    .text-box{
+        width: 70%;
+        margin-left: 5%;
+    }
+    .text-box h1{
+        font-size: 30px;
+    }
+    .menu-header ul {
+        display: flex;   
+        flex-direction: column;
+    }   
+    ul.menu2{
+        width: 150px;
+        height: 100vh;
+        background-color: #f44336;
+        position: absolute;
+        top:-225px;
+        right:-90px; 
+        transition: 0.5s;
+        padding-top:130px;
+        padding-left: 15px;
+        padding-right: 18px;   
+    }
+    .menu1{
+        position: relative;
+    }
+    
+    .menu1:hover .menu2{
+        opacity: 1;
+    }
+    
+    li{
+        padding: 10px;
+    }
+}
+    p.text-box2{
+        font-weight: 700;
+        font-size: 35px;
+        text-align: center;
+        padding-top: 40px;
+    } 
+    p.text-box3{
+        padding-top: 2px;
+        font-size: 15px;
+        text-align: center;
+        color:#777;
+        
+    }
+    .wrapper-box{
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        margin: 5% 10%;
+    } 
+    .first-box,.second-box,.third-box{
+        width: 30%;
+        background-color: rgba(253, 167, 223,0.4);
+        
+        text-align: center;
+        box-sizing: border-box;
+        transition: 0.5s;
+        border-radius: 10px;
+}
+    .first-box:hover,.second-box:hover,.third-box:hover{
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    }
+    @media  (max-width: 700px){
+        .wrapper-box,.wrapper-box2{
+            flex-direction: column;     
+        }
+        .first-box,.second-box,.third-box,.outer{
+            margin-bottom: 10px;
+        }
+    }
+        
+    p.content1{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    p.content2{
+        font-size: 15px;
+        padding:20px 12px;
+        
+    }
+    p.text-box4{
+        font-weight: 700;
+        font-size: 35px;
+        text-align: center;
+        padding-top: 40px;
+    }
+    p.text-box5{
+        padding-top: 2px;
+        font-size: 15px;
+        text-align: center;
+        color:#777;
+    }
+    .wrapper-box2{
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        margin: 5% 10%;
+    }
+    img.image-box{
+        height: 450px;
+        width: 350px;
+        border-radius: 10px;
+    }
+    .outer{
+        position: relative;
+        
+    }
+    .layer{
+        background-color:transparent;
+        height: 450px;
+        width: 100%;
+        top:0;
+        left: 0;
+        position: absolute;
+        transition: 0.5s;
+        border-radius: 12px;
+        
+    }
+    .layer:hover{
+        background-color:rgba(226,0,0,0.4);
+    }
+    .text-inner{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: #fff;
+        font-weight: 500;
+        font-size: 26px;    
+        opacity: 0;
+        transition: 0.3s;
+       
+    }
+    .layer:hover .text-inner{
+        opacity: 1;
+        bottom: 40%;
+
+
+    }
+    section.facilities{
+        width: 80%;
+        text-align: center;
+        margin: 0 10%;
+        padding-top: 100px;
+        
+       
+    }
+    h3.text-facil{
+        font-size: 35px;
+        font-weight: 700;
+
+    }
+    p.text2-facil{
+        font-size: 15px;
+        color:#777;
+    }
+    .wrapper3{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 50px;
+          
+    }
+    .facilities-col{
+        width: 30%;
+        height: 300px;
+        text-align: left;
+        margin-bottom: 100px;
+          
+    }
+    .facilities-col img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        
+    }
+    @media (max-width:700px) {
+    .wrapper3{
+        flex-direction: column;
+    }
+    .facilities-col{
+        width:70% ;
+        margin-bottom: 150px;
+    }
+    }
+    section.comment{
+        width: 80%;
+        margin:0 10%;
+        margin-top:100px;
+        text-align: center;
+    }
+    .comment h3{ 
+        font-size: 35px;
+        font-weight: 700;
+
+    }
+    .comment p{
+        font-size: 15px;
+        color: #777;
+
+    }
+    .wrapper4{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 70px;
+
+    }
+    .first-comment{
+        width: 40%;
+        display: flex;
+        text-align: left;
+        border-radius: 10px;
+        background-color: #fff3f3;
+        padding:25px;
+        margin-bottom: 100px;
+
+    }
+    .first-comment img{
+         height: 40px;
+         width: 40px;
+         border-radius: 50%;
+         margin-right: 14px;
+         margin-top: 14px;
+    }
+    .Infor h3{
+        font-size: 17px;
+    }
+    .Infor .fa-star{
+        color: #f44336;
+    }
+    .Infor .fa-star-half-stroke{
+        color: #f44336;
+    }
+    @media (max-width:700px) {
+    .wrapper4{
+        flex-direction: column;
+    }
+    .first-comment{
+        margin-bottom: 20px;
+    }   
+    }
+    .footer{
+        width: 100%;
+        text-align: center;
+        padding: 30px 0;
+    }
+    .footer h3{
+        font-weight: 600;
+    }
+    .footer p{
+        padding :0 20%;
+    }
+    .icon-footer{
+        display: flex;
+        justify-content: center;
+        background-color: black;
+    
+    }
+    .fa-facebook-square,.fa-twitter,.fa-instagram, .fa-linkedin-in{
+        color:#f44336;
+        padding:10px 10px;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+   <nav>
+    <a class="icon-header" href="#"><img class="image1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbTGUlo9D4po3RO4ZhhMsosMAIk_nmwaYJ_Q&usqp=CAU" alt=""></a>
+
+    <div class="menu-header">
+        
+        <div class="menu1">
+        <ul class="menu2">
+            <li><a class="name" href="#">Home</a></li>
+            <li><a class="name" href="#">About</a></li>
+            <li><a class="name" href="#">Course</a></li>
+            <li><a class="name" href="#">Blog</a></li>
+            <li><a class="name" href="#">Contact</a></li>
+        </ul>
+        </div>  
+    </div>   
+   </nav>
+   <div class="text-box">
+       <h1>World's Biggest University</h1>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quam alias atque sint nam ullam minima non eaque obcaecati. Temporibus vitae aperiam facere corrupti fugiat, dolorem tenetur voluptatibus ullam doloremque.</p><br/>
+       <a class="text-link" href="#">Visit us to know More</a>
+   </div>
+ </div>
+<p class="text-box2">Course We Offer</p>
+<p class="text-box3">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+<div class="wrapper-box">
+    <div class="first-box"><p class="content1">Intermediate</p><p class="content2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab veritatis pariatur minus optio, impedit nihil placeat porro asperiores reiciendis, architecto aut repellendus iure cupiditate sint et tempore dolor, non nulla.</p></div>
+    <div class="second-box"><p class="content1">Degree</p><p class="content2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab veritatis pariatur minus optio, impedit nihil placeat porro asperiores reiciendis, architecto aut repellendus iure cupiditate sint et tempore dolor, non nulla.</p></div>
+    <div class="third-box"><p class="content1">Post Graduation</p><p class="content2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab veritatis pariatur minus optio, impedit nihil placeat porro asperiores reiciendis, architecto aut repellendus iure cupiditate sint et tempore dolor, non nulla.</p></div>   
+</div>
+<p class="text-box4">Our Global Campus</p>
+<p class="text-box5">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+ <div class="wrapper-box2">
+  <div class="outer" href="#"><img class="image-box" src="https://images.unsplash.com/photo-1586760517845-88f3ea745618?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Y2FtcHVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt=""><div class="layer"><p class="text-inner">LONDON</p></div></div>
+  <div class="outer" href="#"><img class="image-box" src="https://images.unsplash.com/photo-1527891751199-7225231a68dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2FtcHVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt=""><div class="layer"><p class="text-inner">NEW YORK</p></div></div>
+  <div class="outer" href="#"><img class="image-box" src="https://images.unsplash.com/photo-1602209231515-2f68a92cc925?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNhbXB1c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt=""><div class="layer"><p class="text-inner">WASHINGTON</p></div></div>
+ </div>
+
+ <section class="facilities">
+     <h3 class="text-facil">Our Facilities</h3>
+     <p class="text2-facil">Lorem ipsum dolor sit amet consectetur adipisicing elitt!</p>
+     <div class="wrapper3">
+     <div class="facilities-col">
+         <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGZhY2lsaXRpZXMlMjBpbiUyMHNjaG9vbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+         <h3>Class Library</h3>
+         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos ad odit at placeat error voluptatem vero culpa.</p>
+     </div>
+     <div class="facilities-col">
+         <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGZhY2lsaXRpZXMlMjBpbiUyMHNjaG9vbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+         <h3>Class Library</h3>
+         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos ad odit at placeat error voluptatem vero culpa.</p>
+     </div>
+     <div class="facilities-col">
+         <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZmFjaWxpdGllcyUyMGluJTIwc2Nob29sfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+         <h3>Class Library</h3>
+         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos ad odit at placeat error voluptatem vero culpa.</p>
+     </div>
+     </div>
+
+ </section>
+  <section class="comment">
+      <h3>What Our Student Say</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+      <div class="wrapper4">
+        <div class="first-comment">
+          <img src="https://images.unsplash.com/photo-1536924940846-227afb31e2a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+          <div class="Infor"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis illum in laborum fuga temporibus dignissimos provident. Illo repudiandae, provident modi, excepturi incidunt.</p>
+                             <h3>User Name 1</h3>
+                             <i class="fa-solid fa-star"></i>
+                             <i class="fa-solid fa-star"></i>
+                             <i class="fa-solid fa-star"></i>
+                             <i class="fa-solid fa-star"></i>
+                             <i class="fa-regular fa-star"></i>
+         </div>
+        </div>
+        <div class="first-comment">
+            <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+            <div class="Infor"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis illum in laborum fuga temporibus dignissimos provident. Illo repudiandae, provident modi, excepturi incidunt.</p>
+                               <h3>User Name 2</h3>
+                               <i class="fa-solid fa-star"></i>
+                               <i class="fa-solid fa-star"></i>
+                               <i class="fa-solid fa-star"></i>
+                               <i class="fa-solid fa-star"></i>
+                               <i class="fa-regular fa-star-half-stroke"></i>
+         </div>
+        </div>
+
+      </div>
+  </section>
+
+  <section class="footer">
+     <h3>About us</h3>
+     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque molestias aliquam at quis exercitationem quos mollitia veniam. Animi facere illum impedit.</p>
+     <div class="icon-footer">
+        <i class="fa-brands fa-facebook-square"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-linkedin-in"></i>
+     </div>
+  </section>
+</div>  
+</body>
+</html>

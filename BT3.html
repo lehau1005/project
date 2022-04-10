@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7ea463c34f.js" crossorigin="anonymous"></script>
+    <title>Ecommerce Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <style>
+    *{
+        margin: 0;
+        padding:0;
+    }
+    body{
+        font-family:'Roboto', sans-serif;
+    }
+    .header{
+      background-image: linear-gradient(0,rgba(236, 220, 210,0.2),rgba(46, 204, 113,0.4)),
+      url(https://images.unsplash.com/photo-1506183478292-c7c59060a75b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1033&q=80);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 100vh;
+    }
+    
+    .image-menu{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px 10%;
+        font-size: 20px;
+    }
+    .icon{
+        width: 105px;
+        border: 2px solid black;
+        padding:6px;
+        
+    }
+    .icon span{
+        color: tomato
+    }
+    .menu-header ul{
+        display: flex;
+        list-style-type: none;
+        
+    }
+    li a{
+        text-decoration: none;
+        padding:0 10px;
+        color: #fff;
+    }
+    li a:hover{
+        color:black;
+    }
+    .content-header{
+        margin: 150px 10%;
+        
+    }
+    .content-header h1{
+        font-size: 45px;
+        font-weight: 800;
+        padding: 10px 0;
+        line-height: 60px;
+
+    }
+    .content-header p{
+        font-size: 17px;
+        padding: 10px 0;
+    }
+    .content-header h3{
+        color: #fff;
+        border: 2px;
+        width: 130px;
+        padding:8px 20px;  
+        border-radius: 30px;
+        background-color: #ff6347cf;
+        cursor: pointer;
+        font-size: 17px;
+        transition: background 0.5s;
+    }
+    .content-header h3:hover{
+        background-color:#563434;
+    }
+    @media (max-width:700px) {
+        .header{
+            position: relative;
+        }
+        .menu-header ul{
+            position: absolute;
+            flex-direction: column;
+            width: 150px;
+            background-color: rgba(45, 52, 54,0.5);
+            height: 300px;
+            top:0;
+            right: 0;
+            
+        }
+        .menu-header ul li{
+            display:block;
+            padding:10px;
+        }
+        
+        .content-header h1{
+            font-size: 35px;
+        }
+        .content-header p{
+            font-size: 15px;
+        }
+        .wrapper2{
+            display: flex;
+            flex-direction: column;
+        }
+        .wrapper3{
+            text-align: center;
+        }
+        
+    }
+    section .wrapper{
+        margin: auto;
+        text-align: center;
+    }
+    .wrapper1{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 100px 20%;
+        
+    }
+    .wrapper1 p{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    select{
+        font-size: 19px;
+        font-weight: 500;
+        color:#000000;
+    }
+    .wrapper2{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 20%;
+        
+    }
+    .image{
+        text-align: left;
+        margin: 10px 0;
+        transform: translateY(5px);
+        transition: 0.5s;
+        
+    }
+    .image:hover{
+        transform: translateY(15px);
+    }
+    .image img{
+        width: 100%;
+        height: 285px;
+        padding:5px 0;
+    }
+    .image p{
+        padding:5px 0;
+    }
+    .wrapper3{
+        margin:50px 20%;
+    }
+    .wrapper3 span{
+        border:1px solid tomato;
+        padding:10px;
+        transition: 0.5s;
+        cursor:pointer;
+    }
+    .wrapper3 span:hover{
+        background-color: tomato;
+    }
+    .offer{
+        width: 100%;
+        height: 300px;
+        background-image: linear-gradient(0,rgba(255, 159, 243,0),rgba(245, 246, 250,1.0)),url(https://images.unsplash.com/photo-1579586337278-3befd40fd17a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGUlMjB3YXRjaHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60);
+        background-position: center;
+        position: relative;
+
+    }
+    .text-offer p{
+        position: absolute;
+        top:45px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .text-offer h1{
+        position: absolute;
+        top:5px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .textsmall{
+        position: absolute;
+        bottom:20px;
+        left: 50%;
+        transform: translateX(-50%);
+        border:1px solid tomato;
+        padding:8px 15px;
+        border-radius: 20px;
+        background-color: tomato;
+        cursor: pointer
+    }
+    @media (max-width:500px) {
+        .offer{
+            position: relative;
+            text-align: center;
+        }
+        .text-offer h1{
+            position: absolute;
+            top:35%;
+
+        }
+        .text-offer p{
+            position: absolute;
+            top:13px;
+        }
+        
+    }
+    .wrapper-comment{
+        display: flex;
+        margin: 0 20%;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .comment1{
+        width: 25%;
+        margin:50px 10px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+        padding: 40px 20px;
+        transform: translateY(0);
+        background-color: #fff3f3;
+    }
+    .comment1 p{
+        padding: 10px 0;
+        font-size: 12px;
+        color:#777;
+    }
+    .comment1 h2{
+        font-size: 15px;
+        font-weight: 600;
+        color:#555;
+    }
+    .first-img img{
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        padding: 10px 0;
+
+    }
+    .fa-quote-left,.fa-star,.fa-star-half-stroke{
+        color:#f44336;
+    }
+    .fa-quote-left{
+        font-size: 25px;
+    }
+
+    .comment1:hover{
+        transform: translateY(-10px);
+        background-color: rgba(236, 240, 241,0.8);
+    }
+    @media (max-width:700px) {
+        .wrapper-comment{
+            display: flex;
+            flex-direction: column;
+        }
+        .comment1{
+            width: 60%;
+            margin:20px;
+        }
+        
+    }
+    .wrapper-images{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 50px 20%;
+    }
+    .image1{
+        width: 160px;
+        
+    }
+    .image1 img{
+        width: 100%;
+        filter: grayscale(100%);
+    }
+    .image1 img:hover{
+        filter: grayscale(0);
+    }
+        
+    .footer{
+        background-color: black;
+        color: #fff;
+        width: 100%;
+        height: 220px;
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    .content1{
+        width: 25%;
+        margin: 40px 5%;      
+    }
+    .content1 h3{
+        padding: 12px 0;
+
+    }
+    .create{
+        display: flex;
+        padding: 12px 0;
+    }
+    .icon-footer{
+        display: flex;
+        align-items: center;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        padding:4px;
+        margin-right: 5px;
+    }
+    .icon-footer p{
+        padding: 0 5px;
+    }
+    .icon-footer span{
+        font-size: 10px;
+    }  
+    .content2{
+        width: 25%;
+        margin: 50px 5%;
+
+    }
+    .content2 h3{
+        color: #fff;
+        border: 2px solid tomato;
+        width: 130px;
+        padding:5px;  
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .content2 span{
+        color:tomato
+    }
+    .content3{
+        width: 10%;
+        margin: 50px 5%;;
+
+    }
+    .content3 h3{
+        margin-bottom: 20px;
+        
+    }
+    .content4 h3{
+        margin-bottom: 20px;
+
+    }
+    .content4{
+        width: 10%;
+        margin: 50px 5%;
+    }
+    .last{
+        width: 100%;
+        height: 60px;
+        background-color: black;
+        margin-top: 0;
+    }
+    .layer{
+        margin: 0 10%;
+        border-top:1px solid white;
+        color:#fff;
+        text-align: center;
+        padding:20px 0;   
+    }
+    @media (max-width:850px) {
+        .content1{
+            margin-left: 5px;
+        }
+        .create{
+            width: 300px;
+        }
+        .icon-footer{   
+            width: 120px;
+            padding:0;  
+            height: 45px; 
+        }  
+    }
+    @media (max-width:750px) {
+        .footer{
+           font-size: 12px;
+        }
+        .icon-footer{   
+            width: 90px;
+            padding:0;  
+            height: 45px; 
+        } 
+        .last{
+            font-size: 12px;
+        }
+    }
+    </style>
+</head>
+<body>
+ <div class="container">
+    <div class="header">
+      <div class="image-menu">
+        <div class="icon"><span>RED</span>STORE</div>
+
+        <div class="menu-header">
+           <ul>
+            <li><a class="text1" href="#">Home</a></li>
+            <li><a class="text1" href="#">Product</a></li>
+            <li><a class="text1" href="#">About</a></li>
+            <li><a class="text1" href="#">Contact</a></li>
+            <li><a class="text1" href="#">Account</a></li>
+            <li><a class="text1" href="#"></a></li>
+           </ul>
+        </div>
+    </div>
+    <div class="content-header">
+        <h1>Give Your Workout<br/>A New Style!</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet perspiciatis obcaecati recusandae? Obcaecati architecto accusantium temporibus ratione.</p>
+        <h3>Explore Now &#8594;</h3>
+    </div>
+    </div>
+ 
+    <section class="wrapper">
+        <div class="wrapper1">
+            <h2>All Product</h2>
+            <select name="Shopping" >
+                <option value="ds">Defailt Shopping</option>
+                <option value="sp">Short by Price</option>
+                <option value="sr">Short by Rating</option>
+                <option value="ss">Short by Sale</option>
+            </select>
+        </div>
+        <div class="wrapper2">
+        <div class="image"><img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8dCUyMHNoaXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+            <p>Black Printed T-Shirt</p>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <p>$50.60</p>
+        </div>
+        <div class="image"><img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8amVhbnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+            <p>Printed Jean</p>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star-half-stroke"></i>
+            <p>$70.10</p>
+        </div>
+        <div class="image"><img src="https://images.unsplash.com/photo-1603808033192-082d6919d3e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHNob2VzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+            <p>Printed Shoes</p>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star-half-stroke"></i>
+            <p>$46.60</p>
+        </div>
+        <div class="image"><img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dCUyMHNoaXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+            <p>White Printed T-Shirt</p>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <p>$90.70</p>
+        </div>
+
+        </div>
+        <div class="wrapper2">
+        <div class="image"><img src="https://images.unsplash.com/photo-1606297255627-c58c609140e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNwb3J0JTIwc2hvZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+            <p>Grey Printed Shoes</p>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <p>$50.60</p>
+        </div>
+        <div class="image"><img src="https://images.unsplash.com/photo-1552664199-fd31f7431a55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNsb3RoaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+            <p>Red Printed T-Shirt</p>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star-half-stroke"></i>
+            <p>$70.10</p>
+        </div>
+        <div class="image"><img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHdhdGNofGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+            <p>Printed Watch</p>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star-half-stroke"></i>
+            <p>$46.60</p>
+        </div>
+        <div class="image"><img src="https://images.unsplash.com/photo-1579171931975-97962e46be2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHdhdGNofGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+            <p>Printed T-Shirt</p>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <p>$90.70</p>
+        </div>
+
+        </div>
+        <div class="wrapper2">
+        <div class="image"><img src="https://images.unsplash.com/photo-1501127122-f385ca6ddd9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2xvdGhpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+            <p>Red Printed T-Shirt</p>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <p>$50.60</p>
+        </div>
+        <div class="image"><img src="https://images.unsplash.com/photo-1514327605112-b887c0e61c0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGF0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+            <p>Red Printed T-Shirt</p>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star-half-stroke"></i>
+            <p>$70.10</p>
+        </div>
+        <div class="image"><img src="https://images.unsplash.com/photo-1585145197082-dba095ba01ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHNob3J0JTIwc2tpcnR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+            <p>Short Trouser</p>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star-half-stroke"></i>
+            <p>$46.60</p>
+        </div>
+        <div class="image"><img src="https://images.unsplash.com/photo-1494609626232-e95194acf740?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c3BvcnQlMjBzaG9lc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+            <p>Red Printed T-Shirt</p>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <p>$90.70</p>
+        </div>
+
+        </div> 
+        <div class="wrapper3">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>→</span>
+        </div>
+    </section>
+     
+    <div class="offer">
+     <div class="text-offer">
+         <p>Exclusively Available on App Store</p>
+         <h1>Smart Band 4</h1>
+         <div class="textsmall">Buy Now &#8594;</div>
+     </div>
+    </div>
+
+    <div class="wrapper-comment">
+        <div class="comment1">
+            <i class="fa fa-quote-left"></i>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem neque molestias, quisquam iure ratione atque odit odio distinctio.</p>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star-half-stroke"></i>
+            <div class="first-img"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cG9ydHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt=""></div>
+            <h2>Username 1</h2>
+        </div>
+        <div class="comment1">
+            <i class="fa fa-quote-left"></i>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem neque molestias, quisquam iure ratione atque odit odio distinctio.</p>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star-half-stroke"></i>
+            <div class="first-img"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt=""></div>
+            <h2>Username 2</h2>
+        </div>
+        <div class="comment1">
+            <i class="fa fa-quote-left"></i>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem neque molestias, quisquam iure ratione atque odit odio distinctio.</p>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star-half-stroke"></i>
+            <div class="first-img"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvcnRyYWl0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt=""></div>
+            <h2>Username 3</h2>
+        </div>
+    </div>
+    <div class="wrapper-images">
+        <div class="image1"><img src="https://iconape.com/wp-content/files/ll/371939/png/371939.png" alt=""></div>
+        <div class="image1"><img src="https://thumbs.dreamstime.com/b/logo-icon-vector-logos-icons-set-social-media-flat-banner-vectors-svg-eps-jpg-jpeg-paper-texture-glossy-emblem-wallpaper-210442451.jpg" alt=""></div>
+        <div class="image1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpZNtHX8V-2a7R_CY6xb32n_rb5YgYLV0_Gw&usqp=CAU" alt=""></div>
+        <div class="image1"><img src="https://www.pngitem.com/pimgs/m/440-4406974_paypal-logo-png-paypal-logo-icon-png-transparent.png" alt=""></div>
+    </div>
+    <div class="footer">
+       <div class="content1">
+           <h3>Dowload Our App</h3>
+           <p>Dowload App for Android and Ios mobile phone</p>
+           <div class="create">
+             <div class="icon-footer">
+               <i class="fa-brands fa-google-play"></i>
+               <p><span>Get it on</span> <br/>Google Play</p>
+             </div>
+             <div class="icon-footer">
+               <i class="fa-brands fa-apple"></i>
+               <p><span>Dowload on the</span><br/>App Store</p>
+             </div>
+           </div>
+       </div>
+       <div class="content2">
+           <h3><span>RED</span>STORE</h3>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+       </div>
+       <div class="content3">
+           <h3>Useful Links</h3>
+           <p>Coupons</p>
+           <p>Blog Post</p>
+           <p>Pocity</p>
+       </div>
+       <div class="content4">
+           <h3>Follow Us</h3>
+           <p>Facebook</p>
+           <p>Twitter</p>
+           <p>Instagram</p>
+           <p>Youtube</p>
+       </div>  
+    </div>
+    <div class="last">
+      <div class="layer">Copyright 2020 - Easy Tutorials</div>
+    </div>  
+         
+</div>
+</body>
+</html>
