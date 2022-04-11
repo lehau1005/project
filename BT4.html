@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7ea463c34f.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            font-family: 'poppins',sans-serif;
+        }
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding:10px 2%;
+            box-shadow: 0 0 10;
+            background-color: #fff;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+            
+        }
+        .header-left{
+            display: flex;
+            align-items: center;
+        }
+        .header-left .header-menu{
+            width: 90px;
+            height: 60px;
+            padding-right: 20px;
+        }
+        .header-left .header-icon{
+            width: 30px;
+            height: 30px;
+            padding-right: 10px;
+            cursor: pointer;
+        }
+        .header-left img{
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+        .header-right img{
+            width: 30px;
+            height: 30px;
+            padding:  0 20px;
+            cursor: pointer;       
+        }
+        .header-right .user-icon{
+            width: 30px;
+            border-radius: 50%;
+            cursor: pointer;  
+        }
+        .header-middle{
+            display: flex;
+            align-items: center;   
+        }
+        .bar-box{
+            display: flex;
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            border-radius: 25px;
+            width: 400px;
+            justify-content: space-between;
+        }
+        .header-middle .bar-box input{
+            border:0;
+            outline: 0;
+            background-color:transparent;          
+        }
+        .header-middle .bar-box .search-box{
+            width: 15px;
+        }
+        .header-middle .mic-icon{
+            width: 60px;
+            cursor: pointer;
+
+        }
+        .side-bar{
+            margin: 7px 0;
+            width: 230px;
+            height: 100vh;
+            background-color:#fff;
+            font-size: 20px;
+            overflow-y: scroll;
+            
+        }
+        .side-bar .top-side-bar{
+            width: 150px;
+            margin-left: 20px;
+            padding-top: 10px;
+            border-bottom: 1px solid black;
+
+        }
+        .top-side-bar .bar-1{
+            display: flex;
+            align-items: center;
+            padding: 10px 10px;
+        }
+        .top-side-bar .bar-1 img{
+            width: 25px;
+            padding-right: 25px;
+            cursor: pointer;
+        }
+        .top-side-bar .bar-1 h2{
+            font-size: 18px;
+            font-weight: 500;
+            color:rgba(45, 52, 54,0.9);
+            cursor: pointer;
+        }
+        
+        .bottom-side-bar h2{
+            font-size: 15px;
+            padding: 18px 25px;
+            font-weight: 700;
+            color:rgba(45, 52, 54,0.9);
+            cursor: pointer;
+            
+        }
+        .bottom-side-bar .bar-2{
+            display: flex;
+            align-items: center;
+            padding:10px;
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+        .bottom-side-bar .bar-2 img{
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            padding-right: 3px;   
+            cursor: pointer; 
+        }
+        .bottom-side-bar .bar-2 p{
+            margin-left: 10px;
+            font-size: 18px;
+            color:rgba(45, 52, 54,0.9);
+            cursor: pointer;           
+        }
+        .main-wrapper{
+            display: flex;
+            background-color:rgba(236, 240, 241,0.6);           
+        }
+        .wrapper{
+            width: 80%;
+            margin: 10px 20px;
+        }
+        .big-image{
+            width: 100%;
+            height: 250px;
+            background-image: url('https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fGJlYWNofGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position:center;
+            border-radius: 14px;
+            position: relative;
+        }
+        .big-image .layer{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border-radius: 14px;
+            background-color: black;
+            top:0;
+            left: 0;
+            opacity: 0.4;
+            
+        }
+        .big-image .layer p{
+            position: absolute;
+            font-size: 25px;
+            color:#fff;
+            top:40%;
+            left:50px;           
+        }
+        .big-image .layer span{
+            position: absolute;
+            font-size: 15px;
+            color:#fff;
+            top:60%;
+            left:50px;
+            border: 1px solid white;
+            padding:10px;
+            cursor: pointer;
+        }
+        .big-image .layer .travel{
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top:4%;
+            left:5%;
+        }
+        .muti-images{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .content1{
+            width: 24%;
+            margin:10px 0;
+        }
+        .content1 .small-img{
+            width: 100%;
+            border-radius: 14px;
+            cursor: pointer;
+        }
+        .content1 h4{
+            font-size: 12px;
+            color:#95a5a6;
+            padding-left: 32px;
+        }
+        .image-text{
+            display: flex;
+            margin: 5px 0;
+        }
+        .content1 .image-text p{
+            font-weight: 800;
+            font-size: 12px;
+            line-height: 18px;
+            cursor: pointer;
+
+        }
+        .image-text .smallest-img{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            padding-right: 5px;
+        }    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+         <div class="header-left">
+            <img class="header-menu"src="https://png.pngtree.com/png-vector/20190328/ourlarge/pngtree-menu-icon-design--essential-icon-vector-design-png-image_877580.jpg" alt="">
+            <img class="header-icon"src="https://thuviendohoa.vn/upload/images/items/logo-youtube-nut-play-youtube-png-387.webp" alt="">
+            <h2>VideoTuBe</h2>
+         </div>
+         <div class="header-middle">
+             <div class="bar-box"><input type="text" placeholder="Search">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/500px-Search_Icon.svg.png" class="search-box">
+            </div>
+             <img src="https://cdn.tgdd.vn/Files/2015/09/02/693982/Untitd.png" class="mic-icon">
+            
+         </div>
+         <div class="header-right">
+            <img src="https://i.pinimg.com/originals/44/be/b3/44beb3c457a01f0a4a4f0d9ede6af2f4.png" alt="">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9ENuoFaovJd0KcLHhyTjoTs9BD-_qVal5Lw&usqp=CAU" alt="">
+            <img class="user-icon" src="https://images.unsplash.com/photo-1649416049133-b5c285cefa36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE4fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+         </div>
+        </nav>
+        <div class="main-wrapper">
+        <div class="side-bar">
+            <div class="top-side-bar">
+            <div class="bar-1"><img src="https://truonglocland.vn/wp-content/uploads/2019/04/icon.png" alt="">
+                            <h2>Home</h2>
+            </div>
+            <div class="bar-1"><img src="https://static.vecteezy.com/system/resources/thumbnails/004/999/439/small/fire-sign-fire-flame-icon-isolated-on-white-background-illustration-free-vector.jpg" alt="">
+                            <h2>Explore</h2>
+            </div>
+            <div class="bar-1"><img src="https://static.thenounproject.com/png/114730-200.png" alt="">
+                            <h2>Subcription</h2>
+            </div>
+            <div class="bar-1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHl_86R7X37ntBBKxXPbMrgxSsWN51t0J5Ew&usqp=CAU" alt="">
+                            <h2>Library</h2>
+            </div>
+            <div class="bar-1"><img src="https://static.thenounproject.com/png/456172-200.png" alt="">
+                            <h2>History</h2>
+            </div>
+            <div class="bar-1"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAbFBMVEX///8AAAD19fVHR0crKyswMDAODg5hYWHPz8/5+fm0tLTExMR0dHTr6+uxsbHp6elXV1fe3t5dXV3Kysra2tpwcHBQUFC5ublNTU1AQEDBwcEcHBwXFxciIiKlpaWGhoaQkJBoaGiCgoKZmZlkq7rFAAADo0lEQVR4nO3di1riMBAF4AahFLcsiFJExAu+/zsuyHJPmknsNJ3x/A/Al8MwSVoayDIAAAAAAAAAAAAAAIDOKt5Sj4BbYabj1GPgVRhj7lMPgtUuoRlqLuN3QtVl/J/QzNSW8ZDQmL+ph8LklNAMe6kHw+IsodJuvEioshsvE2rsxuuEZqatG28SqutGS0JlWxxbQl1ltCfU1I2OhIrK6EyophvdCbWsjXUJdVz+1yZUUUZPQgWTqi+h/EnVn1B6NxISCi8jKaHotZGWUHIZqQnllpGckLo29hblkFm5CFnCAhKSbsZ9BLxevPyDJ6G/G8d9pkg3+uSmCUvo6cZeawG3Eamf1MCEJq/rxiFLFochU8LtFsf55j0y5KjxyJXQ3Y3TxkPUIhYxJqGrG5uO4DPiS2gv41Oz4/ebcCY089uXarkNjSk4E5aW6Sb2zYr2wJfw9Y/tpXpNJ/Dh68O5Y70YNJ6h1jMpYETC3LkO3TPEqEG8Sxac0NaBSYq4pAUMTegu4E6r68UTS8K5p7lbXDBoS0VgwrV1Cr0wqdgiXahoK0VgwpI0Oz9uljlfsp18WZILGJIw9xfwoMcsIF5AQloBu4iWcP2SepzxSAnr1sDOoyQkXkx3lD+h3A7c8yVc0afQjvIkFN2Be7UJ63ehQtQllN6Be+6E8jtwz5nQdxkhhiOhlgJmroQ6OnDPlvBV8C70liWhpgJmloT2e6GCXSdUsIm5cpVQwybmykVCNWvgubOEhFtpEp0SKptCj44JdRYwOyYsU4+Dz3dCybfSvAqVa+C5QnEH7hWfSqfQI+35AAAAAACgTeO3srqToirfQs/RjTa27586bRN01TdepR5vhFVAGcepBxuJHnGWeqiRptSAL6lHGo16B63VE3WNIp7sGqUe5w/Q5tOH1MP8AcZTQR1Be9pbfw3192HW0gEJBhUtYNvHsRpE/qmOu9QjjXRHDSh2rqGfC2r/hHIjqEfXvo3lbb6Df6Dr6b0a9KUYVO9BBTwYcZ/Hagy+1AUAAAAAAAAAAAAAAAAAAAAAAI/J13SVS7GeftH+neSkV6Z+EC9YGXR67YH5N9RZ5AGPl05SDzYS/ZMq9Slo4l+UZNki9UijLYgJ5T0ffDCjBdR/okTqk/o7ONn1W2qovw/b/tPCBhHn0l+wHmbPqUcaibynySYSN97brXfAFZT6a4vt9eE89XiDuf6g0P1J/aoGclTB1/gAAAAAAAAAAAAAAACt+wfUJktk2bCZQQAAAABJRU5ErkJggg==" alt="">
+                            <h2>Playlist</h2>
+            </div>
+            <div class="bar-1"><img src="data:image/png;base64,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" alt="">
+                            <h2>Messages</h2>
+            </div>
+         </div>
+         <div class="bottom-side-bar">
+            <h2>SUBSCRIBED</h2>
+            <div class="bar-2">
+                <img src="https://images.unsplash.com/photo-1649390696517-0457ad3ffafb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80" alt="">
+                <p>Username 1</p>
+            </div>
+            <div class="bar-2">
+                <img src="https://images.unsplash.com/photo-1649266627098-cc1bb09778b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDl8NnNNVmpUTFNrZVF8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                <p>Username 2</p>
+            </div>
+            <div class="bar-2">
+                <img src="https://images.unsplash.com/photo-1626502494036-52b55853bcd0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDEwfDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                <p>Username 3</p>
+            </div>
+            <div class="bar-2">
+                <img src="https://images.unsplash.com/photo-1649414292641-3c5431ce3c4b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDEyfDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                <p>Username 4</p>
+            </div>
+            <div class="bar-2">
+                <img src="https://images.unsplash.com/photo-1649420050344-1bfba75b4658?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE2fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                <p>Username 5</p>
+            </div>
+            <div class="bar-2">
+                <img src="https://images.unsplash.com/photo-1649420050344-1bfba75b4658?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE2fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                <p>Username 6</p>
+            </div>
+            <div class="bar-2">
+                <img src="https://images.unsplash.com/photo-1649420050344-1bfba75b4658?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE2fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                <p>Username 7</p>
+            </div>
+            <div class="bar-2">
+                <img src="https://images.unsplash.com/photo-1649420050344-1bfba75b4658?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE2fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                <p>Username 8</p>
+            </div>
+            <div class="bar-2">
+                <img src="https://images.unsplash.com/photo-1649420050344-1bfba75b4658?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE2fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                <p>Username 9</p>
+            </div>
+            </div>
+        </div>
+        <div class="wrapper">
+             <div class="big-image"><div class="layer"><img class="travel" src="data:image/jpeg;base64,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" alt=""><p>The most beautiful scenery when visiting and traveling with friends</p><span>Subscribe Now</span></div>
+            </div>
+             <div class="muti-images">
+                  <div class="content1">
+                      <img class="small-img" src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVhY2glMjB0cmF2ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                      <div class="image-text">
+                          <img class="smallest-img" src="https://images.unsplash.com/photo-1468413253725-0d5181091126?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGJlYWNoJTIwdHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                          <p>The most beautiful scenery when visiting</p>
+                      </div>
+                      <h4>Easy Toturial</h4>
+                      <h4>15k Views.2 days ago</h4>                             
+                  </div>
+                  <div class="content1">
+                      <img class="small-img" src="https://images.unsplash.com/photo-1505245208761-ba872912fac0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTJ8ODk1ODQ0MXx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                      <div class="image-text">
+                          <img class="smallest-img" src="https://images.unsplash.com/photo-1468413253725-0d5181091126?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGJlYWNoJTIwdHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                          <p>The most beautiful scenery when visiting</p>
+                      </div>
+                      <h4>Easy Toturial</h4>
+                      <h4>15k Views.2 days ago</h4>                             
+                  </div>
+                  <div class="content1">
+                      <img class="small-img" src="https://images.unsplash.com/photo-1503145902849-c007a52e7374?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTV8ODk1ODQ0MXx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                      <div class="image-text">
+                          <img class="smallest-img" src="https://images.unsplash.com/photo-1468413253725-0d5181091126?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGJlYWNoJTIwdHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                          <p>The most beautiful scenery when visiting</p>
+                      </div>
+                      <h4>Easy Toturial</h4>
+                      <h4>15k Views.2 days ago</h4>                             
+                  </div>
+                  <div class="content1">
+                      <img class="small-img" src="https://images.unsplash.com/photo-1544473244-f6895e69ad8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8Mnw4OTU4NDQxfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                      <div class="image-text">
+                          <img class="smallest-img" src="https://images.unsplash.com/photo-1468413253725-0d5181091126?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGJlYWNoJTIwdHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                          <p>The most beautiful scenery when visiting</p>
+                      </div>
+                      <h4>Easy Toturial</h4>
+                      <h4>15k Views.2 days ago</h4>                             
+                  </div>
+             </div>
+             <div class="muti-images">
+                  <div class="content1">
+                      <img class="small-img" src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                      <div class="image-text">
+                          <img class="smallest-img" src="https://images.unsplash.com/photo-1468413253725-0d5181091126?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGJlYWNoJTIwdHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                          <p>The most beautiful scenery when visiting</p>
+                      </div>
+                      <h4>Easy Toturial</h4>
+                      <h4>15k Views.2 days ago</h4>                             
+                  </div>
+                  <div class="content1">
+                      <img class="small-img" src="https://images.unsplash.com/photo-1552585354-34956b0472fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTd8ODk1ODQ0MXx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                      <div class="image-text">
+                          <img class="smallest-img" src="https://images.unsplash.com/photo-1468413253725-0d5181091126?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGJlYWNoJTIwdHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                          <p>The most beautiful scenery when visiting</p>
+                      </div>
+                      <h4>Easy Toturial</h4>
+                      <h4>15k Views.2 days ago</h4>                             
+                  </div>
+                  <div class="content1">
+                      <img class="small-img" src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                      <div class="image-text">
+                          <img class="smallest-img" src="https://images.unsplash.com/photo-1468413253725-0d5181091126?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGJlYWNoJTIwdHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                          <p>The most beautiful scenery when visiting</p>
+                      </div>
+                      <h4>Easy Toturial</h4>
+                      <h4>15k Views.2 days ago</h4>                             
+                  </div>
+                  <div class="content1">
+                      <img class="small-img" src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVhY2glMjB0cmF2ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                      <div class="image-text">
+                          <img class="smallest-img" src="https://images.unsplash.com/photo-1468413253725-0d5181091126?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGJlYWNoJTIwdHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                          <p>The most beautiful scenery when visiting.</p>
+                      </div>
+                      <h4>Easy Toturial</h4>
+                      <h4>15k Views.2 days ago</h4>                             
+                  </div>
+             </div>
+             <div class="muti-images">
+                  <div class="content1">
+                      <img class="small-img" src="https://images.unsplash.com/photo-1539651044670-315229da9d2f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8c3RyZWV0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                      <div class="image-text">
+                          <img class="smallest-img" src="https://images.unsplash.com/photo-1468413253725-0d5181091126?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGJlYWNoJTIwdHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                          <p>The most beautiful scenery when visiting</p>
+                      </div>
+                      <h4>Easy Toturial</h4>
+                      <h4>15k Views.2 days ago</h4>                             
+                  </div>
+                  <div class="content1">
+                      <img class="small-img" src="https://images.unsplash.com/photo-1603088549155-6ae9395b928f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHN0cmVldCUyMGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                      <div class="image-text">
+                          <img class="smallest-img" src="https://images.unsplash.com/photo-1468413253725-0d5181091126?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGJlYWNoJTIwdHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                          <p>The most beautiful scenery when visiting</p>
+                      </div>
+                      <h4>Easy Toturial</h4>
+                      <h4>15k Views.2 days ago</h4>                             
+                  </div>
+                  <div class="content1">
+                      <img class="small-img" src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVhY2glMjB0cmF2ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                      <div class="image-text">
+                          <img class="smallest-img" src="https://images.unsplash.com/photo-1468413253725-0d5181091126?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGJlYWNoJTIwdHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                          <p>The most beautiful scenery when visiting.</p>
+                      </div>
+                      <h4>Easy Toturial</h4>
+                      <h4>15k Views.2 days ago</h4>                             
+                  </div>
+                  <div class="content1">
+                      <img class="small-img" src="https://images.unsplash.com/photo-1515965867847-ee9cbe0b2231?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHN0cmVldCUyMGZhc2hpb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                      <div class="image-text">
+                          <img class="smallest-img" src="https://images.unsplash.com/photo-1468413253725-0d5181091126?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGJlYWNoJTIwdHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                          <p>The most beautiful scenery when visiting</p>
+                      </div>
+                      <h4>Easy Toturial</h4>
+                      <h4>15k Views.2 days ago</h4>                             
+                  </div>
+             </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+</html>
